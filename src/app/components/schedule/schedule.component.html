@@ -1,0 +1,59 @@
+<div class="schedule-wrapper">
+  <h1 class="title">
+    <img src="assets/nfl-logo.png" alt="NFL" class="nfl-logo" />
+    Schedule and Results
+  </h1>
+
+  <div class="games-grid" *ngIf="scheduleData?.weeks">
+    <ng-container *ngFor="let week of scheduleData.weeks">
+      <ng-container *ngFor="let game of week.games">
+        <div class="game-card">
+          <!-- Left team -->
+          <div class="team team-left">
+            <div class="team-alias">{{ game.away.alias }}</div>
+            <div class="team-name">{{ game.away.name }}</div>
+            <div class="record">({{ game.away.record.wins }} - {{ game.away.record.losses }})</div>
+          </div>
+
+          <!-- Logo -->
+          <img [src]="'assets/logos/' + game.away.alias.toLowerCase() + '.png'" class="team-logo" />
+
+          <!-- Center Info -->
+          <div class="center-info">
+            <div class="badge" [ngClass]="getGameStatusClass(game.status)">
+              {{ getGameStatusText(game) }}
+            </div>
+            <div *ngIf="game.status === 'scheduled'" class="game-date">
+              {{ game.scheduled | date:'MMMM d' }}
+            </div>
+            <div *ngIf="game.status === 'scheduled'" class="game-time">
+              {{ game.scheduled | date:'shortTime' }}
+            </div>
+            <div *ngIf="game.status === 'closed'" class="score">
+              <span [ngClass]="{'losing-score': game.scoring?.away_points < game.scoring?.home_points}">
+                {{ game.scoring?.away_points }}
+              </span>
+              <span class="score-separator"> - </span>
+              <span [ngClass]="{'losing-score': game.scoring?.home_points < game.scoring?.away_points}">
+                {{ game.scoring?.home_points }}
+              </span>
+            </div>
+            <div class="venue">
+              {{ game.venue.name }}, {{ game.venue.city }}
+            </div>
+          </div>
+
+          <!-- Logo -->
+          <img [src]="'assets/logos/' + game.home.alias.toLowerCase() + '.png'" class="team-logo" />
+
+          <!-- Right team -->
+          <div class="team team-right">
+            <div class="team-alias">{{ game.home.alias }}</div>
+            <div class="team-name">{{ game.home.name }}</div>
+            <div class="record">({{ game.home.record.wins }} - {{ game.home.record.losses }})</div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
