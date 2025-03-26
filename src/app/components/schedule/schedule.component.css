@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .schedule-wrapper {
   background-color: #1e1e1e;
   min-height: 100vh;
   padding: 2rem;
   color: white;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .title {
   text-align: center;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 300;
   margin-bottom: 2rem;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .nfl-logo {
@@ -28,53 +31,84 @@
 
 .game-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   background: #2e2e2e;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 1rem;
   gap: 1rem;
-  text-align: center;
   min-width: 630px;
-  min-height: 130px;
+  min-height: 150px;
   box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.teams-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
 }
 
 .team {
   flex: 1;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 0;
 }
 
 .team-left {
   text-align: right;
+  align-items: flex-end;
 }
 
 .team-right {
   text-align: left;
+  align-items: flex-start;
 }
 
 .team-alias {
   font-size: 0.75rem;
   color: #999;
+  margin: 0;
+  line-height: 1;
 }
 
 .team-name {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .record {
   font-size: 0.8rem;
   color: #aaa;
+  margin: 0;
+  line-height: 1;
 }
 
 .team-logo {
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   object-fit: contain;
 }
 
-.center-info {
-  flex: 2;
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
 }
 
 .badge {
@@ -83,7 +117,6 @@
   border-radius: 4px;
   font-size: 0.7rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
 }
 
 .badge.upcoming {
@@ -100,10 +133,14 @@
 }
 
 .game-date,
-.game-time,
-.score {
-  font-size: 1rem;
+.game-time {
+  font-size: 1.3rem;
   font-weight: 600;
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .score .losing-score {
@@ -112,10 +149,23 @@
 
 .score .score-separator {
   color: #aaa;
+  margin: 0 0.5rem;
 }
 
-.venue {
+.venue-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.venue,
+.venue-comma,
+.venue-city {
   font-size: 0.75rem;
   color: #aaa;
-  margin-top: 0.25rem;
+}
+
+.venue-name {
+  color: white;
+  font-weight: bold;
 }
