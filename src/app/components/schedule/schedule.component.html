@@ -21,11 +21,11 @@
             <div class="team team-left">
               <div class="team-alias">{{ game.away.alias }}</div>
               <div class="team-name">{{ game.away.name }}</div>
-              <div class="record">({{ game.away.record.wins }} - {{ game.away.record.losses }})</div>
+              <div class="record">( {{ game.away.record.wins }} - {{ game.away.record.losses }} )</div>
             </div>
 
             <!-- Away Logo -->
-            <img [src]="'assets/logos/' + game.away.alias.toLowerCase() + '.png'" class="team-logo" />
+            <img [src]="'assets/logos/' + game.away.alias.toLowerCase() + '.png'" class="team-logo-left" />
 
             <!-- Game Info -->
             <div class="game-info">
@@ -47,13 +47,13 @@
             </div>
 
             <!-- Home Logo -->
-            <img [src]="'assets/logos/' + game.home.alias.toLowerCase() + '.png'" class="team-logo" />
+            <img [src]="'assets/logos/' + game.home.alias.toLowerCase() + '.png'" class="team-logo-right" />
 
             <!-- Right team -->
             <div class="team team-right">
               <div class="team-alias">{{ game.home.alias }}</div>
               <div class="team-name">{{ game.home.name }}</div>
-              <div class="record">({{ game.home.record.wins }} - {{ game.home.record.losses }})</div>
+              <div class="record">( {{ game.home.record.wins }} - {{ game.home.record.losses }} )</div>
             </div>
           </div>
 

@@ -17,9 +17,9 @@
 }
 
 .nfl-logo {
-  height: 40px;
+  height: 60px;
   vertical-align: middle;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .games-grid {
@@ -35,7 +35,7 @@
   background: #2e2e2e;
   border-radius: 5px;
   padding: 1rem;
-  gap: 1rem;
+  /* gap: 0.5rem; */
   min-width: 630px;
   min-height: 150px;
   box-sizing: border-box;
@@ -46,6 +46,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-bottom: 0.25rem;
 }
 
 .teams-container {
@@ -53,7 +54,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 
 .team {
@@ -62,8 +63,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2px;
-  padding: 0;
 }
 
 .team-left {
@@ -97,10 +96,24 @@
   line-height: 1;
 }
 
-.team-logo {
-  height: 80px;
-  width: 80px;
+/* .team-logo {
+  height: 70px;
+  width: 70px;
   object-fit: contain;
+} */
+
+.team-logo-left {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  margin-right: 1.5rem;
+}
+
+.team-logo-right {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+  margin-left: 1.5rem;
 }
 
 .game-info {
@@ -113,8 +126,10 @@
 
 .badge {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
+  width: 120px;
+  text-align: center;
+  padding: 0.25rem 0;
+  border-radius: 1px;
   font-size: 0.7rem;
   font-weight: bold;
 }
@@ -140,7 +155,7 @@
 
 .score {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .score .losing-score {
@@ -149,13 +164,14 @@
 
 .score .score-separator {
   color: #aaa;
-  margin: 0 0.5rem;
+  margin: 0 1rem;
 }
 
 .venue-container {
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-top: 0.25rem;
 }
 
 .venue,
