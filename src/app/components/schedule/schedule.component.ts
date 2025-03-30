@@ -5,7 +5,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 @Component({
   selector: 'app-schedule',
   standalone: true,
-  imports: [CommonModule], // 👈 this includes DatePipe
+  imports: [CommonModule], // includes DatePipe
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.css']
 })
