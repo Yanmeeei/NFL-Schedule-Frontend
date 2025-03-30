@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScheduleComponent } from './schedule.component';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('ScheduleComponent', () => {
   let component: ScheduleComponent;
@@ -8,7 +9,8 @@ describe('ScheduleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ScheduleComponent]
+      imports: [ScheduleComponent],
+      providers: [provideHttpClient()]
     })
       .compileComponents();
 
