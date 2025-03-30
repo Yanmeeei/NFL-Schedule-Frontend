@@ -31,7 +31,7 @@ export class ScheduleComponent implements OnInit {
   getGameStatusText(game: any): string {
     if (game.status === 'closed') return 'FINAL';
     if (game.status === 'scheduled') return 'UPCOMING';
-    if (game.status === 'inprogress') return `Q2 | 03:40`; // Add real logic if available
+    if (game.status === 'inprogress') return `Qn | HH:MM`;
     return game.status.toUpperCase();
   }
 
